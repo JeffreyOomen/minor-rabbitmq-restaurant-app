@@ -20,6 +20,8 @@ public class OrderService {
 
     public void placeOrder(Order order) {
         this.orderRepository.save(order);
-        this.rabbitMqSender.send(order.getId());
+
+        // TODO: send PLACE_ORDER_EVENT here
+        //this.rabbitMqSender.send(order.getId());
     }
 }

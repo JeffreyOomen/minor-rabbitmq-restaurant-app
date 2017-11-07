@@ -12,13 +12,16 @@ public class Dish {
 
     private String name;
 
+    private int price;
+
     private int stockAmount;
 
     public Dish() {}
 
-    public Dish(int id, String name, int stockAmount) {
+    public Dish(int id, String name, int price, int stockAmount) {
         this.id = id;
         this.name = name;
+        this.price = price;
         this.stockAmount = stockAmount;
     }
 
@@ -36,6 +39,14 @@ public class Dish {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getStockAmount() {

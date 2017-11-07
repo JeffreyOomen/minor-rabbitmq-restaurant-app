@@ -22,8 +22,8 @@ public class DishApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Dish dish1 = new Dish(1, "dish1", 5);
-        Dish dish2 = new Dish(2, "dish2", 5);
+        Dish dish1 = new Dish(1, "dish1", 31, 5);
+        Dish dish2 = new Dish(2, "dish2", 40, 5);
         dishRepository.save(dish1);
         dishRepository.save(dish2);
     }

@@ -15,6 +15,8 @@ public class OrderController {
 
     @PostMapping("/order")
     public void placeOrder(@RequestBody Order order) {
+        // TODO: you don't get an Object of Order here, but a String array of the dish ids,
+        // TODO a Order object should be constructed here and placed (or in service?).
         orderService.placeOrder(order);
     }
 }
