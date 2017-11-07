@@ -13,12 +13,13 @@
                 <th>Prijs</th>
             </tr>
             <tr th:each="dish : ${dishes}">
+                <!--TODO: something here goes wrong when selecting both-->
                 <td><input type="checkbox" name="selectedDishes" th:value="${dish.id}"/></td>
                 <td th:text="${dish.name}"></td>
                 <td th:text="${dish.price}"></td>
             </tr>
         </table>
-        <button type="submit">Order</button>
+        <button>Order</button>
     </form>
 </body>
 </html>

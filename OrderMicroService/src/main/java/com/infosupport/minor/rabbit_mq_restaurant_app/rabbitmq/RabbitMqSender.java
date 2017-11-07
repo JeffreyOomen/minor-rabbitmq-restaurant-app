@@ -12,7 +12,7 @@ public class RabbitMqSender {
     @Autowired
     private Queue queue;
 
-    public void send() {
-        template.convertAndSend(queue.getName(), "");
+    public void send(int orderId) {
+        template.convertAndSend(queue.getName(), orderId);
     }
 }

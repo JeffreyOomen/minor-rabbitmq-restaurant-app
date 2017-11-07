@@ -1,18 +1,20 @@
 package com.infosupport.minor.rabbit_mq_restaurant_app.rabbitmq;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
-
+@RabbitListener(queues = "restaurant")
 public class RabbitMqSender {
-    @Autowired
-    private RabbitTemplate template;
 
-    @Autowired
-    private Queue queue;
+    Logger logger = LoggerFactory.getLogger(getClass());
 
-    public void send() {
-        template.convertAndSend(queue.getName(), "");
+    @RabbitHandler
+    public void receiving(Integer in) {
+        logger.info("receiving: {}", in);
+
+        // TODO: 1. check if products are still available and send dish approved or not approved to order
+        // TODO: 2. Order than changes status and sends event for le chef.
     }
 }
