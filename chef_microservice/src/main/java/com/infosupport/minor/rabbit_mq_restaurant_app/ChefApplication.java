@@ -1,4 +1,4 @@
-package com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice;
+package com.infosupport.minor.rabbit_mq_restaurant_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -28,7 +28,7 @@ public class DishService {
   public void approveDishes(Order4RabbitMq order4RabbitMq) {
     boolean isApproved = true;
     for (int dishId : order4RabbitMq.getDishIds()) {
-      Dish dish = dishRepository.findOne(Integer.toUnsignedLong(dishId));
+      Dish dish = dishRepository.findOne(dishId);
       if (dish.getStockAmount() <= 0) {
         isApproved = false;
       }

@@ -1,4 +1,4 @@
-package com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.domain;
+package com.infosupport.minor.rabbit_mq_restaurant_app.domain;
 
 import java.io.Serializable;
 

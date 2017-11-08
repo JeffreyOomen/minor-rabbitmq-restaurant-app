@@ -1,4 +1,4 @@
-package com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.rabbitmq;
+package com.infosupport.minor.rabbit_mq_restaurant_app.rabbitmq;
 
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

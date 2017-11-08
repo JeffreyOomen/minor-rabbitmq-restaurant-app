@@ -1,7 +1,7 @@
-package com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.services;
+package com.infosupport.minor.rabbit_mq_restaurant_app.services;
 
-import com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.domain.Order4RabbitMq;
-import com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.rabbitmq.ChefRabbitMqSender;
+import com.infosupport.minor.rabbit_mq_restaurant_app.domain.Order4RabbitMq;
+import com.infosupport.minor.rabbit_mq_restaurant_app.rabbitmq.ChefRabbitMqSender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

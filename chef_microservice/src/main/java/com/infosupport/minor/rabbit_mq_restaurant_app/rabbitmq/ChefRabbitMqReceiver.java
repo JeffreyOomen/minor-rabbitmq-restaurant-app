@@ -1,7 +1,7 @@
-package com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.rabbitmq;
+package com.infosupport.minor.rabbit_mq_restaurant_app.rabbitmq;
 
-import com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.domain.Order4RabbitMq;
-import com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.services.ChefService;
+import com.infosupport.minor.rabbit_mq_restaurant_app.domain.Order4RabbitMq;
+import com.infosupport.minor.rabbit_mq_restaurant_app.services.ChefService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

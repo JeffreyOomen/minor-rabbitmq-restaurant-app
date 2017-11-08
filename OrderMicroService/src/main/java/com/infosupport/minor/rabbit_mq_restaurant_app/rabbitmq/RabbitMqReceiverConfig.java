@@ -39,14 +39,14 @@ public class RabbitMqReceiverConfig {
   }
 
   @Bean
-  public Binding binding2a(TopicExchange topic, Queue autoDeleteQueue1) {
-    return BindingBuilder.bind(autoDeleteQueue1)
+  public Binding binding2a(TopicExchange topic, Queue autoDeleteQueue2) {
+    return BindingBuilder.bind(autoDeleteQueue2)
         .to(topic).with("dish_not_approved_event");
   }
 
   @Bean
-  public Binding binding3a(TopicExchange topic, Queue autoDeleteQueue1) {
-    return BindingBuilder.bind(autoDeleteQueue1)
+  public Binding binding3a(TopicExchange topic, Queue autoDeleteQueue3) {
+    return BindingBuilder.bind(autoDeleteQueue3)
         .to(topic).with("dish_finished_event");
   }
 

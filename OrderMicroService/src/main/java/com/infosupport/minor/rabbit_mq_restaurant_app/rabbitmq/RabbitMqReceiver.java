@@ -24,7 +24,7 @@ public class RabbitMqReceiver {
     this.orderService.orderNotApprovedEvent(order4RabbitMq);
   }
 
-  @RabbitListener(queues = "#{autoDeleteQueue2.name}")
+  @RabbitListener(queues = "#{autoDeleteQueue3.name}")
   public void orderFinished(int orderId) {
     this.orderService.orderFinished(orderId);
   }
