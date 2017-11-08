@@ -28,6 +28,19 @@ public class OrderService {
     order.setStatus(Status.REQUESTED);
     orderRepository.save(order);
 
-    rabbitMqSender.placeOrder( order.getDishIds());
+    rabbitMqSender.placeOrder( order.getDishIds(), order.getId().intValue());
+  }
+
+  public void orderApprovedEvent(int orderId) {
+    this.rabbitMqSender.isApproved(orderId);
+    Order order = this.orderRepository.findOne(Integer.toUnsignedLong(orderId));
+    order.setStatus(Status.PROCESSING);
+    this.orderRepository.save(order);
+  }
+
+  public void orderNotApprovedEvent(int orderId) {
+    Order order = this.orderRepository.findOne(Integer.toUnsignedLong(orderId));
+    order.setStatus(Status.CANCELLED);
+    this.orderRepository.save(order);
   }
 }
