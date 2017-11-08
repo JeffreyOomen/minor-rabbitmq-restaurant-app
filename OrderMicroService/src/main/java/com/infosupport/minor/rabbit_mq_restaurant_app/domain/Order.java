@@ -12,6 +12,9 @@ public class Order {
 
     private String status;
 
+    // TODO: could be multiple dishes
+    private int dishId;
+
     public Order() {}
 
     public Order(int id, String status) {
@@ -33,5 +36,13 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getDishId() {
+        return dishId;
+    }
+
+    public void setDishId(int dishId) {
+        this.dishId = dishId;
     }
 }

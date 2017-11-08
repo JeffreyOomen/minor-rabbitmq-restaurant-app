@@ -9,7 +9,7 @@ public class RabbitMqSenderConfig {
 
     @Bean
     public Queue placeOrder() {
-        return new Queue("restaurant.app");
+        return new Queue("restaurant");
     }
 
     @Bean

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderService {
+    @Autowired
     private OrderRepository orderRepository;
 
     @Autowired
@@ -19,9 +20,11 @@ public class OrderService {
     }
 
     public void placeOrder(Order order) {
-        this.orderRepository.save(order);
+//        orderRepository.save(order);
+        // commented because of this: org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO ORDER[*] (ID, DISH_ID, STATUS) VALUES (NULL, ?, ?) "; expected "identifier"; SQL statement:
+//        insert into order (id, dish_id, status) values (null, ?, ?) [42001-196]
 
         // TODO: send PLACE_ORDER_EVENT here
-        //this.rabbitMqSender.send(order.getId());
+        rabbitMqSender.send(order.getDishId());
     }
 }
