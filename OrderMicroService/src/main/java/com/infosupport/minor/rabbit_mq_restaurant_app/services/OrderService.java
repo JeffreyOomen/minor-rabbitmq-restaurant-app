@@ -28,6 +28,6 @@ public class OrderService {
     order.setStatus(Status.REQUESTED);
     orderRepository.save(order);
 
-    rabbitMqSender.send( order.getDishIds());
+    rabbitMqSender.placeOrder( order.getDishIds());
   }
 }

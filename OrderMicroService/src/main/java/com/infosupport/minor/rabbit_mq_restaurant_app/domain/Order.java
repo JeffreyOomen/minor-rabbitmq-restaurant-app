@@ -3,37 +3,41 @@ package com.infosupport.minor.rabbit_mq_restaurant_app.domain;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "order_")
 public class Order {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private int id;
+  private Long id;
 
   private Status status;
 
-  @CollectionTable()
+  @ElementCollection()
   private List<Integer> dishIds;
 
   public Order() {
   }
 
-  public Order(int id, Status status) {
+  public Order(Long id, Status status) {
     this.id = id;
     this.status = status;
     this.dishIds = new ArrayList<>();
   }
 
-  public int getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
