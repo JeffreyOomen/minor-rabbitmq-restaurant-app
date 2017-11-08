@@ -1,5 +1,6 @@
 package com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.services;
 
+import com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.domain.Order4RabbitMq;
 import com.infosupport.minor.rabbit_mq_restaurant_app.chef_microservice.rabbitmq.ChefRabbitMqSender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,16 +15,16 @@ public class ChefService {
   @Autowired
   private ChefRabbitMqSender chefRabbitMqSender;
 
-  public void cookFood(int[] dishesId, int orderId) {
+  public void cookFood(Order4RabbitMq order4RabbitMq) {
     try {
       Thread.sleep(5000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
 
-    logger.info("food cooked! dishesId:{} orderId:{}", dishesId, orderId);
+    logger.info("food cooked! dishesId:{} orderId:{}", order4RabbitMq.getDishIds(), order4RabbitMq.getOrderId());
 
-    chefRabbitMqSender.foodFinished(orderId);
+    chefRabbitMqSender.foodFinished(order4RabbitMq.getOrderId());
   }
 
 }
