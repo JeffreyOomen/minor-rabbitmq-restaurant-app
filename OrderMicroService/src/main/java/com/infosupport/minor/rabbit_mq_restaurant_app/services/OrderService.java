@@ -50,4 +50,9 @@ public class OrderService {
     order.setStatus(Status.COMPLETED);
     this.orderRepository.save(order);
   }
+
+  public Order getOrderById(int orderId) {
+    return orderRepository.findOne(Integer.toUnsignedLong(orderId));
+  }
+
 }
