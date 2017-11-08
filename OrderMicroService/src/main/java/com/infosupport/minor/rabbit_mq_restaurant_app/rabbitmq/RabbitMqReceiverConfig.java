@@ -28,6 +28,11 @@ public class RabbitMqReceiverConfig {
   }
 
   @Bean
+  public Queue autoDeleteQueue3() {
+    return new AnonymousQueue();
+  }
+
+  @Bean
   public Binding binding1a(TopicExchange topic, Queue autoDeleteQueue1) {
     return BindingBuilder.bind(autoDeleteQueue1)
         .to(topic).with("dish_approved_event");
@@ -37,6 +42,12 @@ public class RabbitMqReceiverConfig {
   public Binding binding2a(TopicExchange topic, Queue autoDeleteQueue1) {
     return BindingBuilder.bind(autoDeleteQueue1)
         .to(topic).with("dish_not_approved_event");
+  }
+
+  @Bean
+  public Binding binding3a(TopicExchange topic, Queue autoDeleteQueue1) {
+    return BindingBuilder.bind(autoDeleteQueue1)
+        .to(topic).with("dish_finished_event");
   }
 
   @Bean

@@ -20,7 +20,5 @@ public class RabbitMqReceiver {
   @RabbitListener(queues = "#{autoDeleteQueue1.name}")
   public void isApproved(Order4RabbitMq order4RabbitMq) {
     this.dishService.approveDishes(order4RabbitMq);
-    // TODO: 1. check if products are still available and send dish approved or not approved to order
-    // TODO: 2. Order than changes status and sends event for le chef.
   }
 }

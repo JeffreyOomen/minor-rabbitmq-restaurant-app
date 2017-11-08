@@ -1,5 +1,6 @@
 package com.infosupport.minor.rabbit_mq_restaurant_app.rabbitmq;
 
+import com.infosupport.minor.rabbit_mq_restaurant_app.domain.Order4RabbitMq;
 import com.infosupport.minor.rabbit_mq_restaurant_app.services.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,12 +15,17 @@ public class RabbitMqReceiver {
   private OrderService orderService;
 
   @RabbitListener(queues = "#{autoDeleteQueue1.name}")
-  public void orderApproved(int orderId) {
-    this.orderService.orderApprovedEvent(orderId);
+  public void orderApproved(Order4RabbitMq order4RabbitMq) {
+    this.orderService.orderApprovedEvent(order4RabbitMq);
   }
 
   @RabbitListener(queues = "#{autoDeleteQueue2.name}")
-  public void orderNotApproved(int orderId) {
-    this.orderService.orderNotApprovedEvent(orderId);
+  public void orderNotApproved(Order4RabbitMq order4RabbitMq) {
+    this.orderService.orderNotApprovedEvent(order4RabbitMq);
+  }
+
+  @RabbitListener(queues = "#{autoDeleteQueue2.name}")
+  public void orderFinished(int orderId) {
+    this.orderService.orderFinished(orderId);
   }
 }

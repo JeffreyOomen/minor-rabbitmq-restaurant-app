@@ -34,6 +34,6 @@ public class DishService {
       }
     }
 
-    rabbitMqSender.dishesStatus(order4RabbitMq.getOrderId(), isApproved);
+    rabbitMqSender.dishesStatus(order4RabbitMq, isApproved);
   }
 }

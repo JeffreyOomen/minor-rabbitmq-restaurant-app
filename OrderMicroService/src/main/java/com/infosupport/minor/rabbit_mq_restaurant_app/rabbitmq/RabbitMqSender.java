@@ -27,7 +27,7 @@ public class RabbitMqSender {
     template.convertAndSend(topic.getName(), keys[0], order4RabbitMq);
   }
 
-  public void isApproved(int orderId) {
-    template.convertAndSend(topic.getName(), keys[1], orderId);
+  public void isApproved(Order4RabbitMq order4RabbitMq) {
+    template.convertAndSend(topic.getName(), keys[1], order4RabbitMq);
   }
 }
