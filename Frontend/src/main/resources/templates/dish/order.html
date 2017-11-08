@@ -5,15 +5,15 @@
   <title>Minor Case 01</title>
 </head>
 <body>
-<table class="table table-striped">
-  <tr>
-    <td></td>
-    <th>Order Status</th>
-    <th>Order id</th>
-  </tr>
-    <td th:text="${order.status}"></td>
-    <td th:text="${order.id}"></td>
-  </tr>
-</table>
+  <table class="table table-striped" th:object="${order}">
+    <tr>
+      <th>Id</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td th:text="*{id}"></td>
+      <td th:text="*{status}"></td>
+    </tr>
+  </table>
 </body>
 </html>
