@@ -11,6 +11,7 @@
     <module>Frontend</module>
     <module>DishMicroService</module>
     <module>OrderMicroService</module>
+    <module>chef_microservice</module>
   </modules>
   <packaging>pom</packaging>
 
