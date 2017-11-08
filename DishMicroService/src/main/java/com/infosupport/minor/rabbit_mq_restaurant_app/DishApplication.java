@@ -13,18 +13,18 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class DishApplication implements CommandLineRunner {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DishApplication.class);
-    }
+  @Autowired
+  private DishRepository dishRepository;
 
-    @Autowired
-    private DishRepository dishRepository;
+  public static void main(String[] args) {
+    SpringApplication.run(DishApplication.class);
+  }
 
-    @Override
-    public void run(String... args) throws Exception {
-        Dish dish1 = new Dish(1, "dish1", 31, 5);
-        Dish dish2 = new Dish(2, "dish2", 40, 5);
-        dishRepository.save(dish1);
-        dishRepository.save(dish2);
-    }
+  @Override
+  public void run(String... args) throws Exception {
+    Dish dish1 = new Dish(1, "dish1", 31, 5);
+    Dish dish2 = new Dish(2, "dish2", 40, 5);
+    dishRepository.save(dish1);
+    dishRepository.save(dish2);
+  }
 }

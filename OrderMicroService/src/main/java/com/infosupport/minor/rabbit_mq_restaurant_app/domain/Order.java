@@ -1,48 +1,62 @@
 package com.infosupport.minor.rabbit_mq_restaurant_app.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CollectionTable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Order {
-    @Id
-    @GeneratedValue
-    private int id;
 
-    private String status;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private int id;
 
-    // TODO: could be multiple dishes
-    private int dishId;
+  private Status status;
 
-    public Order() {}
+  @CollectionTable()
+  private List<Integer> dishIds;
 
-    public Order(int id, String status) {
-        this.id = id;
-        this.status = status;
-    }
+  public Order() {
+  }
 
-    public int getId() {
-        return id;
-    }
+  public Order(int id, Status status) {
+    this.id = id;
+    this.status = status;
+    this.dishIds = new ArrayList<>();
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getStatus() {
-        return status;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+  public Status getStatus() {
+    return status;
+  }
 
-    public int getDishId() {
-        return dishId;
-    }
+  public void setStatus(Status status) {
+    this.status = status;
+  }
 
-    public void setDishId(int dishId) {
-        this.dishId = dishId;
-    }
+  public List<Integer> getDishIds() {
+    return dishIds;
+  }
+
+  public void setDishIds(List<Integer> dishIds) {
+    this.dishIds = dishIds;
+  }
+
+  public enum Status {
+    REQUESTED,
+    PROCESSING,
+    COMPLETED,
+    CANCELLED
+  }
 }

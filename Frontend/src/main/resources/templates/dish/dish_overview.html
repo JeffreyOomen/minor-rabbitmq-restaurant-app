@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Minor Case 01</title>
+  <meta charset="UTF-8"/>
+  <title>Minor Case 01</title>
 </head>
 <body>
-    <form th:action="@{/order}" method="post">
-        <table class="table table-striped">
-            <tr>
-                <td></td>
-                <th>Naam</th>
-                <th>Prijs</th>
-            </tr>
-            <tr th:each="dish : ${dishes}">
-                <!--TODO: something here goes wrong when selecting both-->
-                <td><input type="checkbox" name="selectedDishes" th:value="${dish.id}"/></td>
-                <td th:text="${dish.name}"></td>
-                <td th:text="${dish.price}"></td>
-            </tr>
-        </table>
-        <button>Order</button>
-    </form>
+<form th:action="@{/order}" method="post">
+  <table class="table table-striped">
+    <tr>
+      <td></td>
+      <th>Naam</th>
+      <th>Prijs</th>
+    </tr>
+    <tr th:each="dish : ${dishes}">
+      <td><input type="checkbox" name="selectedDishes" th:value="${dish.id}"/></td>
+      <td th:text="${dish.name}"></td>
+      <td th:text="${dish.price}"></td>
+    </tr>
+  </table>
+  <button>Order</button>
+</form>
 </body>
 </html>

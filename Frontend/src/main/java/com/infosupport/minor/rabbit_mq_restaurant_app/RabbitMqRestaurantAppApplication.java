@@ -12,12 +12,12 @@ import org.springframework.web.client.RestTemplate;
 // this pom doesn't need it, but Spring Boot is configuring it for us.
 public class RabbitMqRestaurantAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RabbitMqRestaurantAppApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(RabbitMqRestaurantAppApplication.class, args);
+  }
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
+  }
 }

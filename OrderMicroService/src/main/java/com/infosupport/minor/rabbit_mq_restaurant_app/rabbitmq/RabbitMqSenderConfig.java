@@ -7,13 +7,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMqSenderConfig {
 
-    @Bean
-    public Queue placeOrder() {
-        return new Queue("restaurant");
-    }
+  @Bean
+  public Queue placeOrder() {
+    return new Queue("com.infosupport.minor.restaurant");
+  }
 
-    @Bean
-    public RabbitMqSender sender() {
-        return new RabbitMqSender();
-    }
+  @Bean
+  public RabbitMqSender sender() {
+    return new RabbitMqSender();
+  }
 }

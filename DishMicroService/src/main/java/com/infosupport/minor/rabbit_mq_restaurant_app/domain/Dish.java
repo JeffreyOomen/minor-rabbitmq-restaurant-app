@@ -6,54 +6,56 @@ import javax.persistence.Id;
 
 @Entity
 public class Dish {
-    @Id
-    @GeneratedValue
-    private int id;
 
-    private String name;
+  @Id
+  @GeneratedValue
+  private int id;
 
-    private int price;
+  private String name;
 
-    private int stockAmount;
+  private int price;
 
-    public Dish() {}
+  private int stockAmount;
 
-    public Dish(int id, String name, int price, int stockAmount) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.stockAmount = stockAmount;
-    }
+  public Dish() {
+  }
 
-    public int getId() {
-        return id;
-    }
+  public Dish(int id, String name, int price, int stockAmount) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.stockAmount = stockAmount;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public int getPrice() {
-        return price;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+  public int getPrice() {
+    return price;
+  }
 
-    public int getStockAmount() {
-        return stockAmount;
-    }
+  public void setPrice(int price) {
+    this.price = price;
+  }
 
-    public void setStockAmount(int stockAmount) {
-        this.stockAmount = stockAmount;
-    }
+  public int getStockAmount() {
+    return stockAmount;
+  }
+
+  public void setStockAmount(int stockAmount) {
+    this.stockAmount = stockAmount;
+  }
 }
